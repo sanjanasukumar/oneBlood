@@ -1,0 +1,156 @@
+<!DOCTYPE html><!--.navbar a:hover,-->
+<html lang="en">
+<title>HOMEPAGE</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+.clearfix
+{overflow:auto;}
+.dropbtn {
+  background-color: red;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #ddd;}
+</style>
+<body>
+
+
+
+<!--<header class="w3-container" style="padding:128px 16px ">
+<div class="clearfix">
+  <img  src="logo.jpg" alt="Pineapple" width="280" height="210">
+  <h1 class="w3-margin w3-jumbo"style ="float:right">Smart Blood Bank</h1>
+</div>
+</header>-->
+
+<header class="w3-container w3-card-4 w3-red " >
+
+<div >
+  <center>
+  <h1 class="w3-margin w3-jumbo">
+    <b>ABC BloodBank</b>
+  </h1>
+  <p class="w3-xlarge">"A drop for you, an ocean for someone else!"
+
+ </p>
+ <br><br>
+</center>
+ </div>
+</header>
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["BloodGroup", "PacketCount", { role: "style" } ],
+        ["A+ve", 8, "#032356"],
+        ["A-ve", 10, "#0e397f"],
+        ["O+ve", 19, "#194fa8"],
+        ["O-ve", 21, "#206ae5"]
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        //title: "Density of Precious Metals, in g/cm^3",
+        width: 600,
+        height: 400,
+        bar: {groupWidth: "45 %"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+      chart.draw(view, options);
+  }
+  </script>
+  <div class="w3-container">
+<div id="columnchart_values" class="w3-twothird w3-left"style="width: 900px; height: 300px;"></div>
+
+
+<!-- modal enter -->
+
+<div class="w3-container w3-onethird   " style="float:left">
+  <center>
+    <br><br><br><br><br>
+   <div id="errorDiv"></div> 
+<div class="dropdown ">
+  <a class="w3-button w3-red w3-padding w3-xlarge w3-right">Send</a>
+  <div class="dropdown-content">
+    <a href="sendbb.html">Blood Bank</a>
+    <a href="sendr.html">Recipient</a>
+
+    </div>
+</div>
+
+<br><br>
+
+<div class=" w3-container ">
+<!-- <form action=""> -->
+
+  
+    <!--<img src="why.jpg" style="width:300px ; height:300px;cursor:pointer;padding:24px" 
+    onclick="onClick2(this)" class="w3-hover-opacity w3-card-4 w3-hover-shadow w3-panel w3-border w3-border-black w3-round-xxlarge"> -->
+    <a class="w3-button w3-red w3-padding w3-xlarge " href="receive.html"> Receive </a>
+    
+    <a class="w3-button w3-red w3-padding w3-xlarge " onclick = "App.errDispl();"> Check </a>
+
+  <br>
+<!-- </form> -->
+</div>
+</center>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
